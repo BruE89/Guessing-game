@@ -14,7 +14,7 @@ def guessing_game():
     while type(x) != int:
 
         try:
-            x = int(input("Dame el número mínimo: ")) #pide el numero minimo y chequea que sea un digito, y numero entero
+            x = int(input("Dame el número mínimo: ")) #pide el numero minimo y chequea que sea un numero entero, INT
             print(f"""has elegido "{x}" como el mínimo""")
         except:
                 print("ERROR: debes ingresar solo números enteros")
@@ -23,7 +23,7 @@ def guessing_game():
     while type(y) != int:
 
         try:
-            y = int(input("Dame el número Máximo: ")) #pide el numero maximo y chequea que sea un digito, y numero entero
+            y = int(input("Dame el número Máximo: ")) #pide el numero maximo y chequea que sea un numero entero, INT
             print(f"""has elegido "{y}" como el máximo""")
         except:
             print("ERROR: debes ingresar solo números enteros")
@@ -45,12 +45,12 @@ def guessing_game():
 
     #determinamos que pasa con cada tipo de respuesta
 
-    count = 0
-    win_state = 0
+    count = 0           #contador para obtener la cantidad de intentos
+    win_state = 0           #condicion para determinar el fin del bucle
 
     while win_state == 0 :
 
-        start = int((int(x) + int(y)) / 2)
+        start = int((int(x) + int(y)) / 2)              #se calcula un punto medio entre el minimo y el maximo
         respuesta = input(f"tu número es {start}?: ")
 
         if respuesta == "menos":
